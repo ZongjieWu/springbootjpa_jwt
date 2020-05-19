@@ -1,0 +1,31 @@
+= swagger管理接口
+
+
+[[_overview]]
+== Overview
+用于做示例教程
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : ZongjieWu
+__Contact Email__ : 2012293155@qq.com
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8082
+__BasePath__ : /
+
+
+=== Tags
+
+* 1.用户相关接口 : 添加、修改、删除、查询等接口
+
+
+

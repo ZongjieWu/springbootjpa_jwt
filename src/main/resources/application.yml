@@ -1,0 +1,31 @@
+spring:
+  profiles:
+      active: @profiles.active@
+  jpa:
+      database: MYSQL
+      show-sql: false
+      hibernate:
+        ddl-auto: none
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          temp:
+            use_jdbc_metadata_defaults: false
+          dialect: org.hibernate.dialect.MySQL5Dialect
+#          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+          default_schema: jpademo
+          order_by.default_null_ordering: last
+logging:
+  level:
+    root: info
+    com.gcs.chargingpile: error
+    org.springframework.security: warn
+  path: /usr/log/jpademo/
+
+
+
+
+
+

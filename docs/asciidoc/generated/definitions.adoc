@@ -1,0 +1,62 @@
+
+[[_definitions]]
+== Definitions
+
+[[_result]]
+=== Result
+返回的数据
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**code** +
+__optional__|返回码|integer (int32)
+|**count** +
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
+|**data** +
+__optional__|返回数据|object
+|**msg** +
+__optional__|返回消息|string
+|===
+
+
+[[_0022188a77f8e91467b4b6295d75d028]]
+=== Result«UserBaseInfoResponseVo»
+返回的数据
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**code** +
+__optional__|返回码|integer (int32)
+|**count** +
+__optional__|数据的总条数(此字段用于分页的时候用)|integer (int64)
+|**data** +
+__optional__|返回数据|<<_userbaseinforesponsevo,UserBaseInfoResponseVo>>
+|**msg** +
+__optional__|返回消息|string
+|===
+
+
+[[_userbaseinforesponsevo]]
+=== UserBaseInfoResponseVo
+用户基本信息实体响应数据
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__required__|用户id|integer (int64)
+|**name** +
+__required__|用户名称|string
+|**phone** +
+__required__|用户电话|string
+|**token** +
+__required__|用户token|string
+|===
+
+
+
