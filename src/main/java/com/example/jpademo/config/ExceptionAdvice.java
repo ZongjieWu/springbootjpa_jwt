@@ -2,6 +2,8 @@ package com.example.jpademo.config;
 
 
 import com.example.jpademo.enums.Result;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
@@ -42,11 +44,16 @@ public class ExceptionAdvice {
 //        }
 //        dataMap.put("result",e.getMessage());
 //        dataMap.put("helpInfo",dataList);
-//        e.printStackTrace();
+        e.printStackTrace();
 //        return Result.retrunFailMsgData(dataMap);
         return Result.retrunFailMsgData("后台系统错误");
     }
 
+    /**
+     * 绑定异常，用于参数校验
+     * @param e
+     * @return
+     */
     @ExceptionHandler(value = BindException.class)
     public Result ExceptionHandler(BindException e) {
 //        System.out.println(e.getObjectName());;
@@ -55,6 +62,25 @@ public class ExceptionAdvice {
 //        System.out.println(e.getFieldError().getDefaultMessage());
 
         return Result.retrunFailMsg(e.getFieldError().getDefaultMessage());
+    }
+
+    /**
+     * 绑定异常，用于参数校验
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value = SignatureException.class)
+    public Result SignatureExceptionHandle(SignatureException e) {
+        return Result.retrunFailMsg("token错误");
+    }
+    /**
+     * 绑定异常，用于参数校验
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value = MalformedJwtException.class)
+    public Result MalformedJwtExceptionHandle(MalformedJwtException e) {
+        return Result.retrunFailMsg("token错误");
     }
 
 }

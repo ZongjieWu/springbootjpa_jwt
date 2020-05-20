@@ -62,7 +62,7 @@ public class CheckTokenAop {
         try {
             c= JWTUtils.parseJWT(jwt);
         }catch (ExpiredJwtException e){
-            return Result.retrunFailMsg("登入超时,请重新登入");
+            return Result.retrunFailMsg("登入超时,请重新登入(暂2分钟后超时)");
         }
 
         //验证身份

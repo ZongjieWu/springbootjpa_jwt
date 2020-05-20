@@ -44,7 +44,7 @@ public class UserController {
      * @return
      */
     @ApiOperation(value = "用户登入",notes = "用户登入")
-    @GetMapping("login")
+    @PostMapping("login")
     public Result<UserBaseInfoResponseVo> add(@Valid LoginUserRequestVo loginUserVo){
         return userService.login(loginUserVo);
     }

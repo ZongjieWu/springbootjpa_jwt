@@ -172,6 +172,7 @@ public class UserServiceImpl implements UserService {
          * 设置新密码
          */
         resUser.setPwd(MD5Util.getMD5(AESUtil.encode(updateUsePwdRequestVo.getNewPwd(), AES_KEY)));
+        resUser.setModifyDate(new Date());
         userDao.saveAndFlush(resUser);
         return Result.retrunSucess();
     }
